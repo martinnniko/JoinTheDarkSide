@@ -1,0 +1,76 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  background-color: rgb(138, 118, 118);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  padding: 10px 40px;
+  justify-content: space-between;
+}
+
+#logo img {
+  display: block;
+  width: 400px;
+  height: 80px;
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+  background-color: transparent;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px;
+  background-color: transparent;
+  text-transform: uppercase;
+}
+
+.primary-btn {
+  color: white;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 15px;
+  box-shadow: rgb(149 17 17) 1px 2px 55px, rgb(94 7 7 / 95%) 0px -2px 30px, rgb(145 25 25) 0px -1px 6px, rgb(38 9 9) -4px 14px 13px, rgb(153 60 60) -1px 0px 5px;
+}
+
+.hero-shot-item {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-shot-text {
+  color: #000000;
+  text-align: left;
+}
+
+.power {
+  padding-bottom: 35px;
+}
+
+.secondary-btn {
+  color: white;
+  padding: 3px 7px;
+  margin: 10px 0px 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 10px;
+  box-shadow: rgb(149 17 17) 1px 0px 11px, rgb(94 7 7 / 95%) 0px 0px 30px, inset rgb(145 25 25) 0px 0px 0px 0px, rgb(38 9 9) 0px 1px 13px, rgb(153 60 60) 0px 0px 5px;
+}
