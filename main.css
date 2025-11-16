@@ -1,28 +1,54 @@
+@font-face {
+  font-family: "Lubrifont";
+  src: url(fonts/WDXLLubrifontSC-Regular.woff2);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Saira";
+  src: url(fonts/SairaStencilOne-Regular.woff2);
+  font-weight: 400;
+}
+
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lubrifont";
+  color: rgb(196, 219, 240);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  background-color: rgb(138, 118, 118);
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-.navbar {
+body {
+  background-color: #050505;
+}
+
+header {
+
   background-color: black;
   display: flex;
   align-items: center;
   padding: 10px 40px;
   justify-content: space-between;
+  position: sticky;
+  top: 0px;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+header.shrink {
+  padding: 5px 10px;
 }
 
 #logo img {
   display: block;
-  width: 400px;
-  height: 80px;
+  background-color: black;
+  width: 60px;
+  height: 60px;
 }
 
 .nav {
@@ -40,37 +66,484 @@ html {
   text-transform: uppercase;
 }
 
+.burger-btn {
+  display: none;
+}
+
 .primary-btn {
   color: white;
-  padding: 10px 15px;
+  background-color: #050505;
+  padding: 10px 25px;
   text-transform: uppercase;
   font-weight: 700;
   border-radius: 15px;
-  box-shadow: rgb(149 17 17) 1px 2px 55px, rgb(94 7 7 / 95%) 0px -2px 30px, rgb(145 25 25) 0px -1px 6px, rgb(38 9 9) -4px 14px 13px, rgb(153 60 60) -1px 0px 5px;
+  cursor: pointer;
+  font-size: 15px;
+  border: 1px;
+  box-shadow: rgb(149 17 17) 1px 0px 55px, inset rgb(94 7 7 / 95%) 0px 0px 10px 0px, rgb(145 25 25) 0px 0px 20px 3px, rgb(38 9 9) 0px 0px 0px 0px, rgb(153 60 60) 0px 0px 0px 0px;
+}
+
+.primary-btn:hover {
+  color: #c42424;
+  border-color: #c42424;
+  background-color: #BCCACD;
+  transition: all .1s ease-in;
+}
+
+.hero-shot {
+  font-family: "Saira";
+  background-color: #0c0c0c;
+  font-weight: 700;
+  align-items: center;
+  padding: 20px 20px 5px;
+  height: 100vh;
+
 }
 
 .hero-shot-item {
-  padding: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 1;
+}
+
+.hero-shot-item img {
+  padding: 15px;
+  display: flex;
+  gap: 10%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.hmain {
+  font-family: "Saira";
+  font-size: 100px;
+  color: salmon;
+  line-height: 0.8;
+}
+
+.hsecondary {
+  font-family: "Saira";
+  font-size: 100px;
+}
+
+.lower {
+  text-align: center;
+  line-height: 1.6;
+  flex-direction: column;
 }
 
 .hero-shot-text {
   color: #000000;
-  text-align: left;
+  margin: 125px 0 170px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 30px;
+  max-width: 900px;
 }
 
-.power {
-  padding-bottom: 35px;
+
+.sithred {
+  color: #fa8072;
+}
+
+.h3low {
+  font-size: 50px;
 }
 
 .secondary-btn {
   color: white;
-  padding: 3px 7px;
+  background-color: #050505;
+  padding: 9px 22px;
   margin: 10px 0px 10px;
   text-transform: uppercase;
   font-weight: 700;
-  border-radius: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  border: 1px;
+  font-size: 20px;
   box-shadow: rgb(149 17 17) 1px 0px 11px, rgb(94 7 7 / 95%) 0px 0px 30px, inset rgb(145 25 25) 0px 0px 0px 0px, rgb(38 9 9) 0px 1px 13px, rgb(153 60 60) 0px 0px 5px;
+}
+
+.secondary-btn:hover {
+  color: #c42424;
+  border-color: #c42424;
+  background-color: #BCCACD;
+  transition: all .1s ease-in;
+  font-size: 20px;
+}
+
+.infobox {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 5%;
+}
+
+.info-box {
+  border: 2px solid #fa8072;
+  border-radius: 4px;
+  height: 220px;
+  width: 220px;
+  font-size: 23px;
+  text-align: center;
+  transition: 0.3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #fa8072;
+}
+
+h4 {
+  font-size: 20px;
+}
+/* BANNER */
+
+.marketing-banner {
+  background-color: #050505;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.banner-track {
+  display: flex;
+  gap: 15px;
+  margin: 100px 0 50px;
+  padding: 5px 15px;
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+.banner-item span {
+  color: #DDBCAD;
+  font-size: 32px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.banner-item {
+  display: flex;
+  gap: 15px;
+  flex-wrap: nowrap;
+  white-space: normal;
+  align-items: center;
+
+}
+
+.banner-item::before {
+  content: "꥟";
+  color: #DDBCAD;
+  display: block;
+  font-size: 60px;
+  width: fit-content;
+  line-height: 10px;
+
+}
+
+
+/* REDGUARD */
+.about-redguard {
+  display: flex;
+  text-align: center;
+
+}
+
+.about-redguard {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 25px;
+  min-height: 570px;
+  height: 100dvh;
+
+
+}
+
+.about-emperor-inner {
+  background-color: #0c0c0c;
+  max-width: 50%;
+  text-align: center;
+  display: flex;
+  z-index: 2;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 25px;
+  padding: 6px;
+  line-height: 1.3;
+}
+
+#redguardemp {
+  position: absolute;
+  left: 10px;
+  top: 80px;
+}
+
+#redguardsolo {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+/* 3 SLIKI */
+.sith-trainings {
+  display: flex;
+  gap: 40px;
+  padding: 80px 60px;
+  background-color: #0c0c0c;
+  color: #e3d3ce;
+}
+
+.sith-column {
+  flex: 1;
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.sith-one {
+  background-color: #6b03039a;
+}
+
+.sith-two {
+  background-color: #55010169;
+}
+
+.sith-three {
+  background-color: #4b020250;
+}
+
+.sith-column h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #f0e5e2;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.sith-column p {
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.sith-column img {
+  width: 100%;
+  border-radius: 30px;
+  margin-bottom: 25px;
+}
+
+.sith-column ul {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 17px;
+  list-style-position: inside;
+}
+
+.sith-column ul li {
+  margin-bottom: 10px;
+}
+
+.sith-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #8b0000;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.sith-btn:hover {
+  color: #c42424;
+  border-color: #c42424;
+  background-color: #BCCACD;
+  transition: all .1s ease-in;
+}
+
+/* FOOTER */
+footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 20px 20px;
+  margin-top: 50px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+
+  max-width: 1300px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: #ccc;
+}
+
+.footer-section a:hover {
+  color: #fff;
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 15px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: left;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #888;
+}
+
+
+@media (max-width:768px) {
+  nav {
+    position: fixed;
+    flex-direction: column;
+    width: 70vw;
+    height: 100dvh;
+    right: 0;
+    top: 0;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
+
+  }
+.hero-shot{
+  height: 100%;
+}
+  .burger-btn {
+    display: block;
+    background-color: transparent;
+    border: none;
+  }
+.hmain{
+  font-size: 40px;
+}
+.hsecondary{
+  font-size: 38px;
+}
+  .hero-shot p {
+    margin: 20px 0;
+    font-size: 18px;
+    max-width: 90%;
+  }
+
+  .hero-shot-text {
+    font-size: 24px;
+  }
+
+  .nav-open {
+    transform: translateX(0);
+    transition: transform .5s ease-in-out;
+  }
+
+  .header-container .primary-btn {
+    margin-left: auto;
+  }
+
+  .h3low{
+    font-size: 40px;
+  }
+  h4 {
+    font-size: 16px;
+    text-align: center;
+    width: 99%;
+  }
+  .info-box h3 {
+    font-size: 20px;
+  }
+  .info-box {
+    width: 60%;
+    margin-bottom: 15px;
+  }
+.infobox {
+    gap: 10px;
+    padding: 10px;
+  }
+  .banner-item span {
+    font-size: 18px;
+  }
+  .about-emperor-inner {
+    font-size: 15px;
+    max-width: 85%;
+            position: absolute;
+        bottom: 100px;
+  }
+  .about-redguard{
+    margin: 10px;
+    flex-direction: column;
+  }
+  #redguardsolo{
+    display: none;
+  }
+  #redguardemp{
+    width: 100%;
+  }
+  .sith-trainings {
+    flex-direction: column;
+    padding: 40px 10px;
+    gap: 20px;
+  }
+  .sith-column {
+    padding: 15px;
+  }
+   .sith-column p,
+  .sith-column ul {
+    font-size: 15px;
+  }
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+  .footer-bottom{
+    text-align: center;
+  }
 }
